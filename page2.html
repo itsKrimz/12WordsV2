@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Veil Lifts</title>
+    <style>
+        body {
+            background: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+            max-width: 600px;
+            padding: 20px;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 15px #00ff00;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 15px 0;
+            line-height: 1.5;
+            opacity: 0.85;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 0.99;
+            }
+            20%, 24%, 55% {
+                opacity: 0.4;
+            }
+        }
+
+        .flicker {
+            animation: flicker 1.5s infinite;
+        }
+
+        .twitter-link-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .twitter-link {
+            font-size: 1.5em;
+            color: #00ff00;
+            text-decoration: none;
+            animation: flicker 1.5s infinite;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .twitter-link img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .twitter-link:hover {
+            text-shadow: 0 0 10px #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1 class="flicker">█▓▒░ THE VEIL LIFTS ░▒▓█</h1>
+        <p>You have passed the threshold, yet this is only the beginning.</p>
+        <p>The path ahead is obscured, and the truth remains hidden.</p>
+        <p>Prepare yourself, for the journey will demand your wit, resolve, and attention to the unseen.</p>
+        <div class="twitter-link-container">
+            <a href="https://x.com/12WordsSol" class="twitter-link">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/X_logo.jpg/800px-X_logo.jpg" alt="X logo">
+                Follow the Whisper
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Path Awaits</title>
+    <style>
+        body {
+            background: black;
+            color: #00ff00;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        a {
+            color: #00ff00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-shadow: 0 0 10px #00ff00;
+        }
+
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 0.99;
+            }
+            20%, 24%, 55% {
+                opacity: 0.4;
+            }
+        }
+
+        .flicker {
+            animation: flicker 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+	        <h1 class="flicker">█▓▒░ CA:  ░▒▓█</h1>
+        <h1 class="flicker">█▓▒░ THE PATH AWAITS ░▒▓█</h1>
+        <p>Decode the whispers, unveil the truth.</p>
+        <p>Those who seek knowledge must first pass the veil.</p>
+
+        <form id="input-form">
+            <input 
+                type="text" 
+                id="cipher-input" 
+                placeholder="Enter the sequence..." 
+                style="background: black; color: #00ff00; border: 1px solid #00ff00; padding: 5px; font-size: 1em; text-align: center;" 
+            />
+            <p id="error" class="hidden">Incorrect. Try again.</p>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('input-form');
+        const input = document.getElementById('cipher-input');
+        const error = document.getElementById('error');
+
+        // Fixed entrance code
+        const entranceCode = "529184";
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const value = input.value.trim();
+
+            if (value === entranceCode) {
+                window.location.href = 'page2.html';
+            } else {
+                error.classList.remove('hidden');
+                setTimeout(() => {
+                    error.classList.add('hidden');
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
